@@ -1,4 +1,5 @@
 import User from "../models/User.js";
+
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
@@ -34,12 +35,9 @@ export const logIn = async (req, res) => {
   try {
     const { email, password } = req.body;
     //User finden
-    const findUser = await User.findOne({ email }).select('+password');
+    const findUser = await User.findOne({ email }).select("+password");
     //Checken, ob PW korrekt
-    const isPasswordCorrect = await bcrypt.compare(
-      password,
-      findUser.password
-    );
+    const isPasswordCorrect = await bcrypt.compare(password, findUser.password);
     console.log(isPasswordCorrect); //returnt true oder false
     //Falls ja token kreieren und zurückschicken
     if (isPasswordCorrect) {
@@ -48,10 +46,7 @@ export const logIn = async (req, res) => {
         process.env.JWT_SECRET,
         { expiresIn: "1h" }
       );
-      res
-        .status(200)
-        .set("Authorization", token)
-        .send("Login successful");
+      res.status(200).set("Authorization", token).send("Login successful");
     } else {
       res.status(401).send("Unauthorized");
     }
