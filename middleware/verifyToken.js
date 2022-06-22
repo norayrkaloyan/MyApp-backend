@@ -10,7 +10,7 @@ export const verifyToken = async (req, res, next) => {
         token,
         process.env.JWT_SECRET
       );
-      //console.log(emailBelongingToToken);
+      // console.log(emailBelongingToToken);
       if (emailBelongingToToken) {
         req.user = emailBelongingToToken;
         next();
