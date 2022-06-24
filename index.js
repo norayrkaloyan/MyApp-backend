@@ -4,7 +4,6 @@ import "./db/mongoose.js";
 import protectedRoute from "./routes/protectedRoutes.js";
 import users from "./routes/users.js";
 import contacts from "./routes/contacts.js";
-import { getContacts } from "./controllers/contacts.js";
 import cors from "cors";
 
 const app = express();
@@ -19,10 +18,10 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use("/user", users);
 app.use("/info", protectedRoute);
+app.use("/contacts", contacts);
+
 app.get("/", (req, res, next) => {
   res.send("Your API is here!");
 });
-app.use("/contacts", getContacts);
-
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
