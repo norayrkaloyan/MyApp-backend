@@ -8,6 +8,7 @@ const contactSchema = new Schema({
   zip: { type: Number, required: false },
   tel: { type: Number, required: false },
   email: { type: String, required: false },
+  about: { type: String, required: false },
 });
 
 export default model("Contact", contactSchema);
