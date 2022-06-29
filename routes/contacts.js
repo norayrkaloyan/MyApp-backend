@@ -1,5 +1,5 @@
 import express from "express";
-import { createContact, getContactsByUserId } from "../controllers/contacts.js";
+import { createContact, deleteContact, getContactsByUserId } from "../controllers/contacts.js";
 
 const contacts = express.Router();
 
@@ -7,6 +7,7 @@ const contacts = express.Router();
 
 contacts.route("/").post(createContact)
 contacts.route("/:userId").get(getContactsByUserId)
+contacts.route("/delete/:contactId").delete(deleteContact)
 
 
 export default contacts;

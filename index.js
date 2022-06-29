@@ -5,6 +5,7 @@ import protectedRoute from "./routes/protectedRoutes.js";
 import users from "./routes/users.js";
 import contacts from "./routes/contacts.js";
 import cors from "cors";
+import notes from "./routes/notes.js";
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use("/user", users);
 app.use("/info", protectedRoute);
 app.use("/contacts", contacts);
+app.use("/notes",notes)
 
 app.get("/", (req, res, next) => {
   res.send("Your API is here!");
