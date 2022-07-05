@@ -4,6 +4,7 @@ import "./db/mongoose.js";
 import protectedRoute from "./routes/protectedRoutes.js";
 import users from "./routes/users.js";
 import contacts from "./routes/contacts.js";
+import events from "./routes/events.js";
 import cors from "cors";
 import notes from "./routes/notes.js";
 
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use("/user", users);
 app.use("/info", protectedRoute);
 app.use("/contacts", contacts);
+app.use("/events",events)
 app.use("/notes",notes)
 
 app.get("/", (req, res, next) => {
