@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/norayrkaloyan/backend2.git"
+    "url": "git+https://github.com/norayrkaloyan/MyApp-backend.git"
   },
   "author": "Norayr Kaloyan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/norayrkaloyan/backend2/issues"
+    "url": "https://github.com/norayrkaloyan/MyApp-backend/issues"
   },
-  "homepage": "https://github.com/norayrkaloyan/backend2#readme",
+  "homepage": "https://github.com/norayrkaloyan/MyApp-backend#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
